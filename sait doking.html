@@ -1,0 +1,249 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>[НАЗВАНИЕ МАГАЗИНА]</title>
+<meta name="description" content="[Одно предложение о вашем магазине и товарах]">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Unbounded:wght@500;700&family=Onest:wght@400;500;600&display=swap">
+<style>
+:root{
+  --bg:#F6F7F5; --fg:#12201B; --muted:#5A6862; --soft:#3C4A44;
+  --line:#CBD2CB; --panel:#E9ECE7; --accent:#2336D6; --accent-soft:#E1E6FA;
+  --dark:#12201B; --on-dark:#F6F7F5; --on-dark-muted:#B8C4BD;
+  --display:'Unbounded',system-ui,sans-serif; --body:'Onest',system-ui,sans-serif;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--fg);font-family:var(--body);font-size:17px;line-height:1.55}
+a{color:inherit;text-decoration:none}
+button,input{font-family:inherit}
+:focus-visible{outline:3px solid var(--accent);outline-offset:3px}
+.wrap{max-width:1200px;margin:0 auto;padding-left:max(24px,env(safe-area-inset-left,0px));padding-right:max(24px,env(safe-area-inset-right,0px))}
+h1,h2{font-family:var(--display);font-weight:700;margin:0;text-wrap:balance}
+h2{font-size:clamp(26px,4vw,34px)}
+header{border-bottom:1px solid #DCE0DA}
+.bar{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:16px;padding-block:18px}
+.logo{font-family:var(--display);font-weight:700;font-size:20px}
+nav{display:flex;flex-wrap:wrap;align-items:center;gap:8px 28px}
+nav a{font-weight:500;padding:10px 0}
+.cart{border:1.5px solid var(--fg);background:transparent;color:var(--fg);border-radius:999px;padding:10px 20px;min-height:44px;font-size:15px;font-weight:600;cursor:pointer}
+.hero{display:flex;flex-wrap:wrap;align-items:center;gap:56px;padding-block:72px 64px}
+.hero-text{flex:1 1 460px;min-width:0;display:flex;flex-direction:column;gap:24px}
+.eyebrow{font-size:14px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--accent)}
+h1{font-size:clamp(32px,5.4vw,52px);line-height:1.12}
+.lead{margin:0;max-width:520px;font-size:19px;color:var(--soft)}
+.actions{display:flex;flex-wrap:wrap;align-items:center;gap:16px}
+.btn{display:inline-flex;align-items:center;min-height:44px;border-radius:12px;padding:15px 30px;font-weight:600;font-size:17px;background:var(--accent);color:#fff;border:0;cursor:pointer}
+.link{display:inline-flex;align-items:center;min-height:44px;font-weight:600;border-bottom:2px solid var(--fg)}
+.photo{flex:1 1 380px;min-width:0;max-width:100%;height:440px;border-radius:28px;background:var(--accent-soft);display:flex;align-items:center;justify-content:center;text-align:center;padding:24px;color:#4A55A8;font-weight:500;overflow:hidden}
+.photo img{width:100%;height:100%;object-fit:cover}
+.perks{background:var(--dark);color:var(--on-dark)}
+.perks .wrap{display:flex;flex-wrap:wrap;gap:32px;padding-block:44px}
+.perk{flex:1 1 220px;min-width:0}
+.perk b{display:block;font-family:var(--display);font-weight:500;font-size:17px;margin-bottom:6px}
+.perk span{font-size:15px;color:var(--on-dark-muted)}
+section{padding-block:72px 16px}
+.head{display:flex;flex-wrap:wrap;align-items:baseline;justify-content:space-between;gap:12px;margin-bottom:36px}
+.head small{font-size:17px;color:var(--muted)}
+.grid{display:flex;flex-wrap:wrap;gap:24px}
+.card{flex:1 1 250px;min-width:0;display:flex;flex-direction:column;gap:14px}
+.card .img{height:260px;border-radius:20px;background:var(--tint,#E1E6FA);display:flex;align-items:center;justify-content:center;text-align:center;padding:16px;font-size:15px;color:#4A5750;overflow:hidden}
+.card .img img{width:100%;height:100%;object-fit:cover}
+.card h3{margin:0;font-size:18px;font-weight:600}
+.card p{margin:0;color:var(--muted);font-size:15px}
+.buy{display:flex;align-items:center;justify-content:space-between;gap:12px}
+.price{font-family:var(--display);font-weight:500;font-size:18px}
+.add{background:var(--dark);color:#fff;border:0;border-radius:10px;padding:11px 18px;min-height:44px;font-size:15px;font-weight:600;cursor:pointer}
+.step{flex:1 1 300px;min-width:0;border:1.5px solid var(--line);border-radius:20px;padding:28px}
+.step i{display:block;font-style:normal;font-family:var(--display);font-weight:700;font-size:32px;color:var(--accent);margin-bottom:10px}
+.step b{display:block;font-size:19px;margin-bottom:8px}
+.step span{color:var(--soft)}
+.review{flex:1 1 300px;min-width:0;background:var(--panel);border-radius:20px;padding:28px;display:flex;flex-direction:column;gap:16px;color:var(--soft)}
+.review b{color:var(--fg);font-size:15px}
+.faq{max-width:860px}
+details{border-top:1px solid var(--line)}
+details:last-child{border-bottom:1px solid var(--line)}
+summary{list-style:none;cursor:pointer;display:flex;align-items:center;justify-content:space-between;gap:16px;min-height:44px;padding:18px 0;font-size:18px;font-weight:600}
+summary::-webkit-details-marker{display:none}
+summary::after{content:"+";font-family:var(--display);font-size:20px;color:var(--accent)}
+details[open] summary::after{content:"−"}
+details div{padding:0 0 18px;max-width:680px;color:var(--soft)}
+.order{margin-block:72px 88px;background:var(--accent);color:#fff;border-radius:28px;padding:56px 40px;display:flex;flex-wrap:wrap;align-items:center;gap:40px}
+.order>div{flex:1 1 340px;min-width:0}
+.order h2{font-size:clamp(24px,3.6vw,32px);line-height:1.2;margin-bottom:14px}
+.order p{margin:0;opacity:.92}
+form{display:flex;flex-direction:column;gap:14px}
+label{display:block;font-size:14px;font-weight:600;margin-bottom:6px}
+input{width:100%;min-height:48px;border:0;border-radius:12px;padding:0 16px;font-size:17px;color:var(--fg);background:#fff}
+.send{background:var(--dark);color:#fff;border:0;border-radius:12px;min-height:52px;font-size:17px;font-weight:600;padding:0 24px;cursor:pointer}
+.msg{background:#fff;color:var(--fg);border-radius:16px;padding:20px 24px;font-weight:600}
+.err{background:#fff;color:#B3261E;border-radius:16px;padding:14px 18px;font-weight:600;font-size:15px}
+footer{border-top:1px solid #DCE0DA;color:var(--muted);font-size:15px}
+footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:16px;padding-block:32px}
+[hidden]{display:none!important}
+@media (max-width:600px){.order{padding:36px 22px}.hero{padding-block:48px 40px}}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap bar">
+    <div class="logo">[НАЗВАНИЕ МАГАЗИНА]</div>
+    <nav>
+      <a href="#catalog">Каталог</a>
+      <a href="#how">Как заказать</a>
+      <a href="#faq">Вопросы</a>
+      <a href="#order">Контакты</a>
+      <button class="cart" type="button" id="cartBtn">Корзина: <span id="cartCount">0</span></button>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <div class="wrap hero">
+    <div class="hero-text">
+      <div class="eyebrow">Новая коллекция · [сезон, год]</div>
+      <h1>[Главный товар] с доставкой за [2–3 дня]</h1>
+      <p class="lead">[Одно предложение о том, чем ваш товар лучше аналогов: материал, цена, срок службы, происхождение.]</p>
+      <div class="actions">
+        <a class="btn" href="#catalog">Выбрать товар</a>
+        <a class="link" href="#how">Как это работает</a>
+      </div>
+    </div>
+    <!-- Чтобы вставить фото: замените содержимое блока на <img src="foto.jpg" alt="Описание товара"> -->
+    <div class="photo">Здесь фото главного товара<br>(рекомендуем 1200×1100 px)</div>
+  </div>
+
+  <div class="perks">
+    <div class="wrap">
+      <div class="perk"><b>Доставка</b><span>[Сроки и стоимость, порог бесплатной доставки]</span></div>
+      <div class="perk"><b>Возврат</b><span>[Срок возврата, например 14 дней]</span></div>
+      <div class="perk"><b>Гарантия</b><span>[Срок гарантии на товар]</span></div>
+      <div class="perk"><b>Оплата</b><span>[Способы оплаты, в том числе при получении]</span></div>
+    </div>
+  </div>
+
+  <section id="catalog" class="wrap">
+    <div class="head"><h2>Каталог</h2><small>В корзине: <span id="cartCount2">0</span></small></div>
+    <div class="grid">
+      <article class="card" style="--tint:#E1E6FA">
+        <div class="img">Фото товара</div>
+        <div><h3>[Товар 1]</h3><p>[Короткое описание, размер или цвет]</p></div>
+        <div class="buy"><div class="price">[цена]</div><button class="add" type="button">В корзину</button></div>
+      </article>
+      <article class="card" style="--tint:#E3EBDD">
+        <div class="img">Фото товара</div>
+        <div><h3>[Товар 2]</h3><p>[Короткое описание, размер или цвет]</p></div>
+        <div class="buy"><div class="price">[цена]</div><button class="add" type="button">В корзину</button></div>
+      </article>
+      <article class="card" style="--tint:#F0E4DC">
+        <div class="img">Фото товара</div>
+        <div><h3>[Товар 3]</h3><p>[Короткое описание, размер или цвет]</p></div>
+        <div class="buy"><div class="price">[цена]</div><button class="add" type="button">В корзину</button></div>
+      </article>
+      <article class="card" style="--tint:#E6E4EE">
+        <div class="img">Фото товара</div>
+        <div><h3>[Товар 4]</h3><p>[Короткое описание, размер или цвет]</p></div>
+        <div class="buy"><div class="price">[цена]</div><button class="add" type="button">В корзину</button></div>
+      </article>
+    </div>
+  </section>
+
+  <section id="how" class="wrap">
+    <div class="head"><h2>Как заказать</h2></div>
+    <div class="grid">
+      <div class="step"><i>1</i><b>Выберите товар</b><span>Добавьте в корзину то, что нужно, или оставьте заявку, и мы подберём вместе с вами.</span></div>
+      <div class="step"><i>2</i><b>Подтвердите заказ</b><span>Мы позвоним, уточним детали, адрес и удобное время доставки.</span></div>
+      <div class="step"><i>3</i><b>Получите и проверьте</b><span>Оплатите удобным способом. Если что-то не подошло, вернём деньги по условиям возврата.</span></div>
+    </div>
+  </section>
+
+  <section class="wrap">
+    <div class="head"><h2>Что говорят покупатели</h2></div>
+    <div class="grid">
+      <div class="review"><span>[Настоящий отзыв покупателя: 2–3 предложения о товаре и доставке.]</span><b>[Имя, город]</b></div>
+      <div class="review"><span>[Настоящий отзыв покупателя: 2–3 предложения о товаре и доставке.]</span><b>[Имя, город]</b></div>
+      <div class="review"><span>[Настоящий отзыв покупателя: 2–3 предложения о товаре и доставке.]</span><b>[Имя, город]</b></div>
+    </div>
+  </section>
+
+  <section id="faq" class="wrap faq">
+    <div class="head"><h2>Частые вопросы</h2></div>
+    <details open><summary>Сколько стоит и как быстро приходит доставка?</summary><div>[Укажите стоимость, порог бесплатной доставки и сроки по регионам.]</div></details>
+    <details><summary>Как оплатить заказ?</summary><div>[Перечислите способы: картой на сайте, при получении, по счёту.]</div></details>
+    <details><summary>Можно ли вернуть товар?</summary><div>[Опишите условия возврата и обмена и срок, в течение которого можно обратиться.]</div></details>
+    <details><summary>Есть ли гарантия на товар?</summary><div>[Срок гарантии и порядок обращения в случае брака.]</div></details>
+  </section>
+
+  <div class="wrap">
+    <div class="order" id="order">
+      <div>
+        <h2>Оставьте номер, и мы перезвоним</h2>
+        <p>Подтвердим заказ, уточним адрес доставки и ответим на вопросы. Обычно звоним в течение [30 минут] в рабочее время.</p>
+      </div>
+      <div>
+        <!-- ВАЖНО: замените ВАШ_ID на код формы из formspree.io (см. инструкцию). -->
+        <form id="leadForm" action="https://formspree.io/f/ВАШ_ID" method="POST">
+          <div><label for="name">Ваше имя</label><input id="name" name="name" type="text" autocomplete="name" placeholder="Анна" required></div>
+          <div><label for="phone">Телефон</label><input id="phone" name="phone" type="tel" autocomplete="tel" placeholder="+[код] [номер]" required></div>
+          <input type="hidden" name="cart_items" id="cartField" value="0">
+          <div class="err" id="formErr" hidden>Не удалось отправить заявку. Попробуйте ещё раз или позвоните нам.</div>
+          <button class="send" type="submit" id="sendBtn">Заказать звонок</button>
+        </form>
+        <div class="msg" id="formOk" hidden>Спасибо, заявка принята. Мы свяжемся с вами в ближайшее время.</div>
+      </div>
+    </div>
+  </div>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div>© [Год] [НАЗВАНИЕ МАГАЗИНА] · [ИНН / регистрационные данные]</div>
+    <div>[Телефон] · [Эл. почта] · [Адрес]</div>
+  </div>
+</footer>
+
+<script>
+(function () {
+  var count = 0;
+  var c1 = document.getElementById('cartCount');
+  var c2 = document.getElementById('cartCount2');
+  var field = document.getElementById('cartField');
+  function render() { c1.textContent = count; c2.textContent = count; field.value = count; }
+  document.querySelectorAll('.add').forEach(function (b) {
+    b.addEventListener('click', function () { count += 1; render(); });
+  });
+  document.getElementById('cartBtn').addEventListener('click', function () {
+    document.getElementById('order').scrollIntoView({ behavior: 'smooth' });
+  });
+
+  var form = document.getElementById('leadForm');
+  form.addEventListener('submit', function (e) {
+    e.preventDefault();
+    var btn = document.getElementById('sendBtn');
+    var err = document.getElementById('formErr');
+    err.hidden = true;
+    btn.disabled = true;
+    btn.textContent = 'Отправляем…';
+    fetch(form.action, {
+      method: 'POST',
+      body: new FormData(form),
+      headers: { 'Accept': 'application/json' }
+    }).then(function (r) {
+      if (!r.ok) { throw new Error('bad'); }
+      form.hidden = true;
+      document.getElementById('formOk').hidden = false;
+    }).catch(function () {
+      err.hidden = false;
+      btn.disabled = false;
+      btn.textContent = 'Заказать звонок';
+    });
+  });
+})();
+</script>
+</body>
+</html>
